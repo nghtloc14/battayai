@@ -3,236 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Battay AI — products and agent systems for real work</title>
-<meta name="description" content="Battay AI is a founder-led, pre-incorporation venture in Ho Chi Minh City. We build products and agent systems for real work: agents do the work and check it, a person approves the steps that matter.">
+<title>Battay AI — Pickup Today, pickup basketball in Ho Chi Minh City</title>
+<meta name="description" content="Battay AI is building Pickup Today: one place where players find a pickup basketball session and hosts run their list, slots and updates. Built in Ho Chi Minh City with Claude.">
 <link rel="canonical" href="https://www.battayai.com/">
+<link rel="alternate" hreflang="en" href="https://www.battayai.com/">
+<link rel="alternate" hreflang="vi" href="https://www.battayai.com/vi/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.battayai.com/">
-<meta property="og:title" content="Battay AI">
-<meta property="og:description" content="Products and agent systems for real work. Founder-led venture in Ho Chi Minh City, since February 2026.">
+<meta property="og:title" content="Battay AI — Pickup Today">
+<meta property="og:description" content="Every pickup basketball session in one place. Building in Ho Chi Minh City with Claude.">
 <meta property="og:image" content="https://www.battayai.com/assets/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #101113;
-    --bg-2: #16171a;
-    --line: #2a2b2f;
-    --line-2: #34353a;
-    --text: #ecebe6;
-    --muted: #94928b;
-    --dim: #6c6a65;
-    --accent: #e0793a;
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-    --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
-  a { color: inherit; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  .mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em; }
-  .label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-
-  /* nav */
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; border-bottom: 1px solid var(--line); }
-  .wordmark { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .wordmark svg { width: 26px; height: 18px; }
-  .wordmark b { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
-  .wordmark i { font-style: normal; font-family: var(--mono); font-size: 11px; border: 1px solid var(--line-2); border-radius: 4px; padding: 1px 5px; color: var(--muted); margin-left: 2px; }
-  nav ul { list-style: none; display: flex; gap: 28px; }
-  nav ul a { text-decoration: none; color: var(--muted); font-size: 14px; }
-  nav ul a:hover { color: var(--text); }
-
-  /* hero */
-  .hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; padding: 72px 0 80px; align-items: start; }
-  .hero .eyebrow { margin-bottom: 22px; }
-  h1 { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1.12; letter-spacing: -.015em; max-width: 15em; }
-  .lede { margin-top: 22px; color: var(--muted); font-size: 17px; max-width: 34em; }
-  .lede em { font-style: normal; color: var(--text); }
-  .ledger { border: 1px solid var(--line); border-radius: 10px; background: var(--bg-2); }
-  .ledger header { display: flex; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--line); }
-  .ledger ul { list-style: none; }
-  .ledger li { display: grid; grid-template-columns: 10px 1fr auto; gap: 12px; align-items: baseline; padding: 13px 18px; border-bottom: 1px solid var(--line); }
-  .ledger li:last-child { border-bottom: 0; }
-  .ledger .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); transform: translateY(-1px); }
-  .ledger .dot.dev { background: transparent; border: 1px solid var(--muted); }
-  .ledger .name { font-weight: 500; font-size: 15px; }
-  .ledger .meta { font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: right; }
-
-  section { padding: 72px 0; border-top: 1px solid var(--line); }
-  .sec-head { display: grid; grid-template-columns: 1fr 2fr; gap: 56px; margin-bottom: 40px; }
-  h2 { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.2; letter-spacing: -.01em; }
-  .sec-head p { color: var(--muted); max-width: 36em; }
-
-  /* agents */
-  .agents { display: grid; grid-template-columns: 1fr 1.15fr; gap: 24px; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  .stat { padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .stat:nth-child(2n) { border-right: 0; }
-  .stat:nth-last-child(-n+2) { border-bottom: 0; }
-  .stat .n { font-family: var(--serif); font-size: 34px; line-height: 1.1; }
-  .stat .n small { font-size: 18px; color: var(--muted); }
-  .stat p { margin-top: 8px; color: var(--muted); font-size: 14px; }
-  .log { border: 1px solid var(--line); border-radius: 10px; background: #0b0c0d; font-family: var(--mono); font-size: 13px; line-height: 1.55; }
-  .log header { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-  .log ol { list-style: none; padding: 6px 0; }
-  .log li { display: grid; grid-template-columns: 48px 1fr; gap: 8px; padding: 10px 16px; }
-  .log li span:first-child { color: var(--accent); }
-  .log li span:last-child { color: #cfcdc6; }
-  .log footer { padding: 10px 16px 14px; color: var(--dim); font-size: 12px; border-top: 1px dashed var(--line); }
-
-  /* products */
-  .products { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .product { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg-2); display: flex; flex-direction: column; }
-  .stage { height: 300px; padding-top: 34px; background: #0c0d0f; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .stage .note { position: absolute; left: 14px; top: 11px; z-index: 2; background: #0c0d0f; padding: 0 4px; font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .04em; }
-  .product .body { padding: 22px 24px 24px; }
-  .product h3 { font-family: var(--serif); font-weight: 600; font-size: 22px; }
-  .product p { color: var(--muted); margin-top: 6px; font-size: 15px; }
-  .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-family: var(--mono); font-size: 12px; color: var(--text); }
-  .status::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-  .status.dev::before { background: transparent; border: 1px solid var(--muted); }
-
-  /* phone sketch: Pickup Today */
-  .phone { width: 196px; height: 372px; border: 1px solid var(--line-2); border-radius: 28px; background: #141518; padding: 18px 14px; transform: translateY(58px); }
-  .phone .bar { width: 54px; height: 5px; border-radius: 3px; background: var(--line-2); margin: 0 auto 16px; }
-  .phone .t { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .06em; }
-  .phone h4 { font-family: var(--serif); font-weight: 600; font-size: 17px; margin: 4px 0 12px; }
-  .session { border: 1px solid var(--line-2); border-radius: 12px; padding: 12px; margin-bottom: 10px; }
-  .session .row { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
-  .session .court { font-size: 13px; font-weight: 500; margin: 4px 0 8px; color: var(--text); }
-  .slots { display: flex; gap: 3px; margin-bottom: 10px; }
-  .slots i { flex: 1; height: 5px; border-radius: 2px; background: var(--accent); }
-  .slots i.o { background: var(--line-2); }
-  .session .btn { font-size: 11px; text-align: center; padding: 6px; border-radius: 7px; background: var(--text); color: #111; font-weight: 600; }
-  .session.faded { opacity: .45; }
-
-  /* list sketch: Bắt Tay Review */
-  .sheet { width: 300px; border: 1px solid var(--line-2); border-radius: 10px; background: #141518; padding: 14px; }
-  .sheet .top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
-  .sheet .top b { font-family: var(--serif); font-weight: 600; font-size: 16px; }
-  .visit { display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); font-size: 12px; }
-  .visit .time { font-family: var(--mono); color: var(--muted); font-size: 11px; }
-  .visit .v b { display: block; font-weight: 500; font-size: 12.5px; }
-  .visit .v span { color: var(--dim); font-size: 11px; }
-  .chip { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--muted); white-space: nowrap; }
-  .chip.ok { border-color: rgba(224,121,58,.6); color: var(--accent); }
-
-  /* method */
-  .flow { list-style: none; display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; counter-reset: s; }
-  .flow li { padding: 20px 18px 22px; border-right: 1px solid var(--line); position: relative; counter-increment: s; }
-  .flow li:last-child { border-right: 0; }
-  .flow li::before { content: "0" counter(s); font-family: var(--mono); font-size: 11px; color: var(--dim); display: block; margin-bottom: 18px; }
-  .flow li::after { content: "→"; position: absolute; right: 14px; top: 18px; color: var(--dim); font-size: 13px; line-height: 1.3; }
-  .flow li:last-child::after { content: "↺"; color: var(--accent); }
-  .flow b { display: block; font-weight: 600; font-size: 15px; }
-  .flow span { display: block; color: var(--muted); font-size: 13.5px; margin-top: 4px; }
-  .flow li.human { background: rgba(224,121,58,.07); }
-  .flow li.human b { color: var(--accent); }
-  .method-note { margin-top: 18px; color: var(--muted); font-size: 14px; max-width: 60em; }
-  .method-note b { color: var(--text); font-weight: 500; }
-
-  /* client + about */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .panel { border: 1px solid var(--line); border-radius: 10px; padding: 26px; }
-  .panel .big { font-family: var(--serif); font-size: 26px; line-height: 1.25; margin: 14px 0 10px; }
-  .panel p { color: var(--muted); font-size: 15px; }
-  .founder { display: flex; gap: 16px; align-items: center; margin-top: 16px; }
-  .founder img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line-2); }
-  .founder b { display: block; font-weight: 500; }
-  .founder span { color: var(--muted); font-size: 13px; }
-
-  .contact { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
-  .contact a.mail { font-family: var(--serif); font-size: 36px; text-decoration: none; border-bottom: 1px solid var(--line-2); }
-  .contact a.mail:hover { border-color: var(--accent); }
-  footer.site { padding: 26px 0 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--dim); font-family: var(--mono); font-size: 12px; }
-
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 56px; }
-    h1 { font-size: 34px; }
-    .sec-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
-    .agents, .products, .split { grid-template-columns: 1fr; }
-    .flow { grid-template-columns: 1fr 1fr 1fr; }
-    .flow li { border-bottom: 1px solid var(--line); }
-    .flow li:nth-child(3n) { border-right: 0; }
-    .flow li:nth-last-child(-n+3) { border-bottom: 0; }
-    section { padding: 56px 0; }
-  }
-  @media (max-width: 560px) {
-    .wrap { padding: 0 18px; }
-    nav ul li:not(:last-child) { display: none; }
-    h1 { font-size: 30px; }
-    .lede { font-size: 16px; }
-    h2 { font-size: 26px; }
-    .ledger li { padding: 12px 14px; }
-    .ledger li { grid-template-columns: 10px 1fr; row-gap: 2px; }
-    .ledger .meta { grid-column: 2; text-align: left; font-size: 11px; }
-    .stat { padding: 18px; }
-    .stat .n { font-size: 28px; }
-    .log { font-size: 12px; }
-    .log li { grid-template-columns: 40px 1fr; }
-    .stage { height: 300px; }
-    .sheet { width: 88%; }
-    .flow { grid-template-columns: 1fr; }
-    .flow li, .flow li:nth-child(3n) { border-right: 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 30px 1fr; padding: 14px 16px; }
-    .flow li:last-child { border-bottom: 0; }
-    .flow li::before { margin: 2px 0 0; grid-row: span 2; }
-    .flow li::after { content: "↓"; top: 14px; }
-    .flow span { margin-top: 0; }
-    .contact a.mail { font-size: 26px; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <div class="wrap">
 
   <nav>
     <a class="wordmark" href="/" aria-label="Battay AI home">
-      <svg viewBox="0 0 26 18" aria-hidden="true"><circle cx="9" cy="9" r="7.5" fill="none" stroke="#ecebe6" stroke-width="1.5"/><circle cx="17" cy="9" r="7.5" fill="none" stroke="#e0793a" stroke-width="1.5"/></svg>
+      <svg viewBox="0 0 26 18" aria-hidden="true"><circle cx="9" cy="9" r="7.5" fill="none" stroke="#ecebe6" stroke-width="1.5"/><circle cx="17" cy="9" r="7.5" fill="none" stroke="#f58b28" stroke-width="1.5"/></svg>
       <b>Battay</b><i>AI</i>
     </a>
     <ul>
-      <li><a href="#agents">Agents</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#method">Method</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="sec"><a href="#product">Pickup Today</a></li>
+      <li class="sec"><a href="#founder">Founder</a></li>
+      <li class="sec"><a href="#claude">Claude</a></li>
+      <li class="sec"><a href="#roadmap">Roadmap</a></li>
+      <li><a class="lang" href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a></li>
     </ul>
   </nav>
 
-  <div class="hero">
+  <header class="hero">
     <div>
-      <div class="label eyebrow">Founder-led venture · Ho Chi Minh City · since Feb 2026</div>
-      <h1>Battay AI builds products and agent systems for real work.</h1>
-      <p class="lede"><em>Bắt tay</em> is Vietnamese for handshake: people and AI agents on the same job. Agents do the work and check it; a person approves the steps that matter.</p>
-    </div>
-    <div class="ledger" aria-label="What is running">
-      <header><span class="label">Running now</span><span class="label">Oct 2026</span></header>
-      <ul>
-        <li><span class="dot"></span><span class="name">Batch-label agent</span><span class="meta">production · since Aug 2026</span></li>
-        <li><span class="dot"></span><span class="name">Print-file agent</span><span class="meta">production · 102 rules</span></li>
-        <li><span class="dot"></span><span class="name">Build Studio</span><span class="meta">gated builds · 19/19 tests</span></li>
-        <li><span class="dot"></span><span class="name">Bắt Tay Review</span><span class="meta">in use internally</span></li>
-        <li><span class="dot dev"></span><span class="name">Pickup Today</span><span class="meta">in development</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <section id="agents">
-    <div class="sec-head">
-      <h2>Agent systems in production</h2>
-      <p>Agents built with Claude Code for the founder’s ongoing paid freelance print-production work: batch labels with serial numbers and barcodes, and print-ready files rebuilt from briefs, photos and old files.</p>
-    </div>
-    <div class="agents">
-      <div class="stats">
-        <div class="stat"><div class="n">57<small>/58</small></div><p>deliberately injected defects caught or flagged by delivery QA (fault-injection test, Aug 2026)</p></div>
-        <div class="stat"><div class="n">102</div><p>real incidents turned into reusable rules</p></div>
-        <div class="stat"><div class="n">Aug <small>2026</small></div><p>batch-label agent goes into production use</p></div>
-        <div class="stat"><div class="n">12</div><p>reusable skills in the batch-label agent</p></div>
+      <div class="brand">
+        <img class="icon" src="assets/pt-icon.png" alt="">
+        <img class="word" src="assets/pt-wordmark.png" alt="Pickup Today">
       </div>
+      <h1>Every pickup basketball session, <em>in one place.</em></h1>
+      <p class="lede">Players see the court, time, fee and open spots, then join. Hosts run their list, slots and updates from <b>one session page</b>, and keep sharing to Zalo and Facebook the way they already do.</p>
+      <div class="facts">
+        <span class="tag build">Building the first version</span>
+        <span class="tag next">First real session: Nov 2026, hosted by the founder</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#product">How it works</a>
+        <a class="btn" href="#claude">How I build with Claude</a>
+      </div>
+    </div>
+
+    <div class="visual" aria-label="Pickup Today design with sample data">
+      <span class="caption label">Design · sample data</span>
+      <div class="phone" lang="vi">
+        <div class="notch"></div>
+        <div class="ph-top"><img src="assets/pt-icon.png" alt="">Pickup Today</div>
+        <div class="ph-when">THỨ NĂM · 19:00–21:00</div>
+        <div class="ph-court">Sân mẫu · Quận 3</div>
+        <div class="ph-fee">60.000đ · gồm sân và nước</div>
+        <div class="ph-slots"><b>Còn 4 slot</b><span>12/16</span></div>
+        <div class="meter"><i></i></div>
+        <ul class="ph-list">
+          <li>Minh</li>
+          <li>Người chơi #7</li>
+          <li>Khách của host</li>
+          <li>+ 9 người <span>xem</span></li>
+        </ul>
+        <div class="ph-upd">Cập nhật lúc 18:42</div>
+        <div class="ph-btn">Vào nhóm Zalo của host</div>
+        <div class="ph-safe">An toàn · Quy tắc · Báo sự cố</div>
+      </div>
+      <div class="ticket" lang="vi">
+        <div>
+          <div class="t-host">Host mẫu</div>
+          <div class="t-big">CÒN<br>4 SLOT</div>
+          <div class="t-when">Thứ Năm 19:00 · Q.3</div>
+        </div>
+        <div class="t-foot">
+          <small>Pickup Today<br>battayai.com</small>
+          <div class="qr"><svg viewBox="0 0 21 21" shape-rendering="crispEdges" aria-hidden="true"><path fill="#111" fill-rule="evenodd" d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM14 0h7v7h-7zM15 1v5h5V1zM16 2h3v3h-3zM0 14h7v7H0zM1 15v5h5v-5zM2 16h3v3H2zM9 0h2v2H9zM12 3h1v3h-1zM8 4h3v1H8zM9 8h3v2H9zM14 9h2v1h-2zM18 8h3v2h-3zM0 9h3v1H0zM4 10h2v2H4zM8 12h1v3H8zM10 13h3v2h-3zM15 12h1v4h-1zM17 14h4v1h-4zM12 17h2v4h-2zM9 18h2v1H9zM16 17h2v2h-2zM19 18h2v3h-2z"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="problem">
+    <div class="sec-head">
+      <h2>A problem I know from the court</h2>
+      <div>
+        <p>To find a game tonight, players scroll several groups, find a post that may already be out of date, and message the host to ask if a spot is still open. Hosts track names across comments and private messages, and repost every time the count changes.</p>
+        <p><b>Pickup Today makes the session page the one current source.</b> Every post, QR code and link points to it, and it always shows when it was last updated.</p>
+      </div>
+    </div>
+    <div class="compare">
+      <div class="card now">
+        <h3>Today</h3>
+        <ul>
+          <li>Session details spread across Zalo and Facebook groups</li>
+          <li>"Any spots left?" answered one message at a time</li>
+          <li>Old posts still circulating after the session is full</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>With Pickup Today</h3>
+        <ul>
+          <li>One page per session: court, time, fee, open spots, who is in</li>
+          <li>The host taps −1 or "Sold out" and every link shows the new count</li>
+          <li>A status image with a QR code, made from the host's own court photo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="sec-head">
+      <h2>What players and hosts get</h2>
+      <p>A web app that opens from a link or QR code, no install. Payment and chat stay between players and the host, in the host's own group. Each line shows where it really stands.</p>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <h3>Players</h3>
+        <ul class="feat">
+          <li><b>Tonight and this weekend, by district</b><span class="tag build">Building</span><span class="d">Browse sessions without an account.</span></li>
+          <li><b>Session page</b><span class="tag build">Building</span><span class="d">Court, time, fee and what it covers, open spots, who is in, "Updated at…".</span></li>
+          <li><b>Safety on every session page</b><span class="tag build">Building</span><span class="d">Code of conduct, emergency info and a report button. Every host in the first version is invited and phone-verified.</span></li>
+          <li><b>Request a spot without an account</b><span class="tag next">Next version</span><span class="d">The host approves; the page shows your status. Built right after the first real session.</span></li>
+          <li><b>Play now</b><span class="tag next">Next version</span><span class="d">Sessions starting within two hours that still need players.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Hosts</h3>
+        <ul class="feat">
+          <li><b>Create a session, or repeat last week's</b><span class="tag build">Building</span><span class="d">Saved courts, back-to-back runs at the same court.</span></li>
+          <li><b>−1, +1, Sold out</b><span class="tag build">Building</span><span class="d">Someone confirms on Zalo: one tap, and the count updates everywhere.</span></li>
+          <li><b>Status image to Zalo in two taps</b><span class="tag build">Building</span><span class="d">"Spots open" and "Almost full" images with a QR code back to the session page.</span></li>
+          <li><b>Move a player to the next run</b><span class="tag build">Building</span><span class="d">When one run is full and the next still has room.</span></li>
+          <li><b>Approve many requests at once</b><span class="tag next">Next version</span><span class="d">Together with requests from players.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note"><b>What we measure:</b> the share of sessions that fill, by district; players who come back; host minutes per session; and the actual cost per player who shows up. The first numbers come from sessions I host myself.</p>
+  </section>
+
+  <section id="founder">
+    <div class="sec-head">
+      <h2>Who is building it</h2>
+      <p>Pickup Today comes from the court, not from a pitch deck.</p>
+    </div>
+    <div class="founder">
+      <div class="who">
+        <img src="assets/founder.jpg" alt="Nguyễn Hồ Tấn Lộc">
+        <div><b>Nguyễn Hồ Tấn Lộc</b><span>Founder, Battay AI · Ho Chi Minh City</span></div>
+      </div>
+      <div class="story">
+        <p>I have played basketball since primary school, starting with a size-5 ball. Early in high school I tore a knee ligament, had surgery and came back to the court. I changed how I play: <b>reading the game, controlling the tempo, shooting from further out</b>, and keeping my handle. It is also why safety matters to me in every session we run.</p>
+        <p>I worked as a <b>basketball teaching assistant, then instructor, at Eballs</b>. I studied graphic design, taught myself to film and edit, and left university in my fourth year to find my own path. I <b>filmed, edited and designed for MSPORT</b>, a dashcam company, and I now do <b>paid remote print design</b>.</p>
+      </div>
+    </div>
+    <div class="maps">
+      <div class="map"><b>Teaching at Eballs</b><span>Understanding players and running sessions on court.</span></div>
+      <div class="map"><b>Video at MSPORT</b><span>Filming and editing, the base for match replay.</span></div>
+      <div class="map"><b>Print design</b><span>Checking every detail before anything is delivered.</span></div>
+      <div class="map"><b>Running agents</b><span>Splitting work, checking it, turning it into a process.</span></div>
+    </div>
+  </section>
+
+  <section id="claude">
+    <div class="sec-head">
+      <h2>Building with Claude, every day</h2>
+      <div>
+        <p>I pay for my own <b>Claude Pro plan</b> and use Claude and Claude Code through the whole working day. AI changed how I learn and how I work: I write down what needs to happen, Claude builds it, an independent review checks it, and <b>I approve before anything ships.</b></p>
+        <p>Agents I built with Claude Code now handle most of my paid print jobs while I keep the final approval. That time goes into Pickup Today.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">57<small>/58</small></div><p>deliberately injected defects caught or flagged by my batch-label agent's delivery QA (fault-injection test, Aug 2026)</p></div>
+      <div class="stat"><div class="n">102</div><p>real incidents my print-file agent has turned into reusable rules</p></div>
+      <div class="stat"><div class="n">G1 · G2</div><p>Pickup Today's scope and build plan approved at gates before any code; scope frozen until the first real session</p></div>
+      <div class="stat"><div class="n">28<small> in 5 days</small></div><p>versions of a paying client's website, shipped with Claude</p></div>
+    </div>
+    <div class="duo">
       <div class="log" aria-label="Excerpt from the rule log">
         <header><span>rules.log · print-file agent</span><span>4 of 102</span></header>
         <ol>
@@ -241,92 +192,43 @@
           <li><span>#011</span><span>Illustrator needs absolute paths; a relative path makes saveAs cancel.</span></li>
           <li><span>#055</span><span>Dark backgrounds built in sRGB go muddy in CMYK. Convert each anchor colour, then blend in ink %.</span></li>
         </ol>
-        <footer>Rules are dated by the job that produced them and reused on later jobs.</footer>
+        <footer>Each rule is dated by the job that produced it and reused on later jobs.</footer>
       </div>
+      <ol class="flow" aria-label="How every job runs">
+        <li><b>Brief</b><span>what needs to happen, written down</span></li>
+        <li><b>Claude builds</b><span>code, files, pages</span></li>
+        <li><b>Independent check</b><span>automated tests and a separate reviewer</span></li>
+        <li class="human"><b>My approval</b><span>before anything ships</span></li>
+        <li><b>Delivered</b><span>to a client, a player, a host</span></li>
+        <li><b>Learning</b><span>every miss becomes a rule</span></li>
+      </ol>
     </div>
   </section>
 
-  <section id="products">
+  <section id="roadmap">
     <div class="sec-head">
-      <h2>Products</h2>
-      <p>Both start from a problem the founder has first-hand: finding a game on a weeknight, and keeping a shoot schedule straight.</p>
-    </div>
-    <div class="products">
-      <article class="product">
-        <div class="stage">
-          <span class="note">concept screen · sample data</span>
-          <div class="phone" aria-hidden="true">
-            <div class="bar"></div>
-            <div class="t">TONIGHT · HCMC</div>
-            <h4>Pickup near you</h4>
-            <div class="session">
-              <div class="row"><span>Thu · 19:00</span><span>5v5</span></div>
-              <div class="court">Court · District 3</div>
-              <div class="slots"><i></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i></div>
-              <div class="btn">Request to join</div>
-            </div>
-            <div class="session faded">
-              <div class="row"><span>Thu · 20:30</span><span>3v3</span></div>
-              <div class="court">Court · District 7</div>
-            </div>
-          </div>
-        </div>
-        <div class="body">
-          <h3>Pickup Today</h3>
-          <p>Find and run pickup basketball in Ho Chi Minh City: courts, times, open spots, requests to join, and tools for hosts.</p>
-          <span class="status dev">In development · first live session planned for Nov 2026</span>
-        </div>
-      </article>
-      <article class="product">
-        <div class="stage">
-          <span class="note">interface sketch</span>
-          <div class="sheet" aria-hidden="true">
-            <div class="top"><b>Today</b><span class="mono" style="color:var(--muted)">3 visits</span></div>
-            <div class="visit"><span class="time">10:00</span><span class="v"><b>Venue A</b><span>contact · directions</span></span><span class="chip ok">confirmed</span></div>
-            <div class="visit"><span class="time">13:30</span><span class="v"><b>Venue B</b><span>shoot notes</span></span><span class="chip">proposed</span></div>
-            <div class="visit"><span class="time">—</span><span class="v"><b>Venue C</b><span>waiting for a time</span></span><span class="chip">unscheduled</span></div>
-          </div>
-        </div>
-        <div class="body">
-          <h3>Bắt Tay Review</h3>
-          <p>Scheduling for food-review shoots: venues, contacts, visit order and on-site notes, shared by a small team.</p>
-          <span class="status">In use internally · <a href="https://review.battayai.com">review.battayai.com</a></span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="method">
-    <div class="sec-head">
-      <h2>How we work</h2>
-      <p>One loop for every job: a person approves before anything ships, and every miss makes the next run better.</p>
-    </div>
-    <ol class="flow">
-      <li><b>Input</b><span>brief, files, feedback</span></li>
-      <li><b>Agent executes</b><span>builds the work</span></li>
-      <li><b>QA</b><span>automated checks, blind review</span></li>
-      <li class="human"><b>Human approval</b><span>before anything ships</span></li>
-      <li><b>Output</b><span>print files, sites, products</span></li>
-      <li><b>Learning</b><span>each miss becomes a rule</span></li>
-    </ol>
-    <p class="method-note">Products go through <b>Build Studio</b>: architect, builder and an independent reviewer, with approval gates from scope to release.</p>
-  </section>
-
-  <section>
-    <div class="split">
-      <div class="panel">
-        <div class="label">Client work</div>
-        <div class="big">A paying client’s website, shipped in 28 versions over 5 days.</div>
-        <p>For a small producer, reached from a QR code on their product labels. Built with Claude.</p>
-      </div>
-      <div class="panel">
-        <div class="label">Who is behind it</div>
-        <div class="big">Founder-led, pre-incorporation, bootstrapped.</div>
-        <div class="founder">
-          <img src="assets/founder.jpg" alt="Nguyễn Hồ Tấn Lộc, founder of Battay AI">
-          <div><b>Nguyễn Hồ Tấn Lộc</b><span>Founder · Ho Chi Minh City</span></div>
+      <h2>Where Pickup Today goes next</h2>
+      <div>
+        <p>The aim: make grassroots basketball easier to join, cheaper to organise and better looked after. Each branch below is tested in real sessions before it becomes a service.</p>
+        <div class="legend">
+          <span class="tag trial">Running trial</span><span class="tag build">Building</span><span class="tag next">Proposed</span><span class="tag explore">Exploring</span><span class="tag vision">Later · Vision</span>
         </div>
       </div>
+    </div>
+    <div class="road">
+      <div class="card"><h3>Find and join pickup</h3><p>Sessions across many hosts in one list, starting in Ho Chi Minh City.</p><span class="tag build">Building</span></div>
+      <div class="card"><h3>Tools for hosts</h3><p>Lists, slots, status images and updates in a few taps, for first-time hosts too.</p><span class="tag build">Building</span></div>
+      <div class="card"><h3>Pickup Today Radar</h3><p>Basketball news collected three times a day and drafted with Claude; I approve every post.</p><span class="tag trial">Running trial</span></div>
+      <div class="card"><h3>Match replay</h3><p>Full-session video players can rewatch on their phone, filmed on a 360 camera I fund myself.</p><span class="tag next">Proposed</span></div>
+      <div class="card"><h3>Agent-assisted video</h3><p>Clips cut by purpose, then player tracking tested on short clips with a person checking every result.</p><span class="tag explore">Exploring</span></div>
+      <div class="card"><h3>Player stats</h3><p>Observable counts such as makes, attempts and assists, defined with players before anything is built.</p><span class="tag explore">Exploring</span></div>
+      <div class="card"><h3>Safety and injury cover</h3><p>Practical safety on every session page now; researching insurance options. No insurance is offered yet.</p><span class="tag explore">Exploring</span></div>
+      <div class="card"><h3>AI inside the product</h3><p>Added task by task, only where it saves a host or a player real effort.</p><span class="tag vision">Later</span></div>
+      <div class="card"><h3>Beyond Ho Chi Minh City</h3><p>Pickup for players and visiting travellers across Vietnam.</p><span class="tag vision">Vision</span></div>
+    </div>
+    <div class="invest">
+      <span class="n">Founder-funded</span>
+      <p>Battay AI is founder-led and bootstrapped. <b>I pay for my own AI tools</b>, and I will buy the camera for match replay with my own money.</p>
     </div>
   </section>
 
@@ -336,7 +238,7 @@
         <div class="label" style="margin-bottom:14px">Contact</div>
         <a class="mail" href="mailto:hello@battayai.com">hello@battayai.com</a>
       </div>
-      <p style="color:var(--muted);max-width:26em">Bắt Tay AI: con người và AI cùng bắt tay làm việc.</p>
+      <p>Hosts, courts, players and partners in Ho Chi Minh City: write to me directly.</p>
     </div>
   </section>
 

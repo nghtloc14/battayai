@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battay AI — Pickup Today, bóng rổ pickup ở TP.HCM</title>
+<meta name="description" content="Battay AI xây Pickup Today: một nơi để người chơi tìm buổi bóng rổ pickup, và host quản lý danh sách, slot, cập nhật. Làm tại TP.HCM cùng Claude.">
+<link rel="canonical" href="https://www.battayai.com/vi/">
+<link rel="alternate" hreflang="en" href="https://www.battayai.com/">
+<link rel="alternate" hreflang="vi" href="https://www.battayai.com/vi/">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.battayai.com/vi/">
+<meta property="og:title" content="Battay AI — Pickup Today">
+<meta property="og:description" content="Mọi buổi bóng rổ pickup ở một nơi. Đang xây tại TP.HCM cùng Claude.">
+<meta property="og:image" content="https://www.battayai.com/assets/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="wordmark" href="./" aria-label="Battay AI, trang chủ">
+      <svg viewBox="0 0 26 18" aria-hidden="true"><circle cx="9" cy="9" r="7.5" fill="none" stroke="#ecebe6" stroke-width="1.5"/><circle cx="17" cy="9" r="7.5" fill="none" stroke="#f58b28" stroke-width="1.5"/></svg>
+      <b>Battay</b><i>AI</i>
+    </a>
+    <ul>
+      <li class="sec"><a href="#product">Pickup Today</a></li>
+      <li class="sec"><a href="#founder">Người sáng lập</a></li>
+      <li class="sec"><a href="#claude">Claude</a></li>
+      <li class="sec"><a href="#roadmap">Lộ trình</a></li>
+      <li><a class="lang" href="../" hreflang="en" lang="en">English</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="brand">
+        <img class="icon" src="../assets/pt-icon.png" alt="">
+        <img class="word" src="../assets/pt-wordmark.png" alt="Pickup Today">
+      </div>
+      <h1>Mọi buổi bóng rổ pickup, <em>ở một nơi.</em></h1>
+      <p class="lede">Người chơi xem sân, giờ, phí, còn bao nhiêu slot rồi tham gia. Host quản lý danh sách, slot và cập nhật trên <b>một trang buổi</b>, và vẫn đăng lên Zalo, Facebook như đang làm.</p>
+      <div class="facts">
+        <span class="tag build">Đang xây bản đầu</span>
+        <span class="tag next">Buổi thật đầu tiên: 11/2026, người sáng lập tự host</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#product">Cách hoạt động</a>
+        <a class="btn" href="#claude">Tôi xây cùng Claude thế nào</a>
+      </div>
+    </div>
+
+    <div class="visual" aria-label="Bản thiết kế Pickup Today với dữ liệu mẫu">
+      <span class="caption label">Bản thiết kế · dữ liệu mẫu</span>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="ph-top"><img src="../assets/pt-icon.png" alt="">Pickup Today</div>
+        <div class="ph-when">THỨ NĂM · 19:00–21:00</div>
+        <div class="ph-court">Sân mẫu · Quận 3</div>
+        <div class="ph-fee">60.000đ · gồm sân và nước</div>
+        <div class="ph-slots"><b>Còn 4 slot</b><span>12/16</span></div>
+        <div class="meter"><i></i></div>
+        <ul class="ph-list">
+          <li>Minh</li>
+          <li>Người chơi #7</li>
+          <li>Khách của host</li>
+          <li>+ 9 người <span>xem</span></li>
+        </ul>
+        <div class="ph-upd">Cập nhật lúc 18:42</div>
+        <div class="ph-btn">Vào nhóm Zalo của host</div>
+        <div class="ph-safe">An toàn · Quy tắc · Báo sự cố</div>
+      </div>
+      <div class="ticket">
+        <div>
+          <div class="t-host">Host mẫu</div>
+          <div class="t-big">CÒN<br>4 SLOT</div>
+          <div class="t-when">Thứ Năm 19:00 · Q.3</div>
+        </div>
+        <div class="t-foot">
+          <small>Pickup Today<br>battayai.com</small>
+          <div class="qr"><svg viewBox="0 0 21 21" shape-rendering="crispEdges" aria-hidden="true"><path fill="#111" fill-rule="evenodd" d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM14 0h7v7h-7zM15 1v5h5V1zM16 2h3v3h-3zM0 14h7v7H0zM1 15v5h5v-5zM2 16h3v3H2zM9 0h2v2H9zM12 3h1v3h-1zM8 4h3v1H8zM9 8h3v2H9zM14 9h2v1h-2zM18 8h3v2h-3zM0 9h3v1H0zM4 10h2v2H4zM8 12h1v3H8zM10 13h3v2h-3zM15 12h1v4h-1zM17 14h4v1h-4zM12 17h2v4h-2zM9 18h2v1H9zM16 17h2v2h-2zM19 18h2v3h-2z"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="problem">
+    <div class="sec-head">
+      <h2>Vấn đề tôi gặp ngay trên sân</h2>
+      <div>
+        <p>Muốn tối nay ra sân, người chơi phải lướt nhiều nhóm, gặp bài đăng có khi đã cũ, rồi nhắn host hỏi còn slot không. Host thì theo dõi tên người trong bình luận, tin nhắn riêng, và đăng lại mỗi lần số người thay đổi.</p>
+        <p><b>Pickup Today biến trang buổi thành nguồn đúng duy nhất.</b> Mọi bài đăng, mã QR và link đều dẫn về đó, và trang luôn ghi lần cập nhật gần nhất.</p>
+      </div>
+    </div>
+    <div class="compare">
+      <div class="card now">
+        <h3>Hiện nay</h3>
+        <ul>
+          <li>Thông tin buổi rải rác trong nhiều nhóm Zalo, Facebook</li>
+          <li>"Còn slot không?" trả lời từng tin một</li>
+          <li>Bài cũ vẫn trôi nổi khi buổi đã đủ người</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Với Pickup Today</h3>
+        <ul>
+          <li>Mỗi buổi một trang: sân, giờ, phí, còn bao nhiêu slot, ai đã có slot</li>
+          <li>Host bấm −1 hoặc "Hết slot", mọi link đều thấy số mới</li>
+          <li>Ảnh trạng thái có QR, làm từ chính ảnh sân của host</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="sec-head">
+      <h2>Người chơi và host nhận được gì</h2>
+      <p>Web app mở từ link hoặc mã QR, không cần cài. Trả tiền và trò chuyện vẫn diễn ra giữa người chơi và host, trong nhóm của host. Mỗi dòng ghi đúng trạng thái hiện tại.</p>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <h3>Người chơi</h3>
+        <ul class="feat">
+          <li><b>Tối nay và cuối tuần, theo quận</b><span class="tag build">Đang xây</span><span class="d">Xem các buổi mà không cần tài khoản.</span></li>
+          <li><b>Trang buổi</b><span class="tag build">Đang xây</span><span class="d">Sân, giờ, phí và phí gồm gì, còn bao nhiêu slot, ai đã có slot, "Cập nhật lúc…".</span></li>
+          <li><b>Mục An toàn trên mọi trang buổi</b><span class="tag build">Đang xây</span><span class="d">Quy tắc ứng xử, thông tin khẩn cấp và nút báo sự cố. Mọi host của bản đầu đều được mời và đã xác minh số điện thoại.</span></li>
+          <li><b>Xin slot không cần tài khoản</b><span class="tag next">Bản sau</span><span class="d">Host duyệt; trang buổi hiện trạng thái của bạn. Làm ngay sau buổi thật đầu tiên.</span></li>
+          <li><b>Chơi ngay</b><span class="tag next">Bản sau</span><span class="d">Các buổi bắt đầu trong 2 giờ tới mà còn thiếu người.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Host</h3>
+        <ul class="feat">
+          <li><b>Tạo buổi, hoặc tổ chức lại buổi tuần trước</b><span class="tag build">Đang xây</span><span class="d">Sân đã lưu, nhiều ca liền nhau ở cùng sân.</span></li>
+          <li><b>−1, +1, Hết slot</b><span class="tag build">Đang xây</span><span class="d">Có người chốt qua Zalo: bấm một lần, số slot đổi ở mọi nơi.</span></li>
+          <li><b>Gửi ảnh trạng thái vào Zalo trong 2 chạm</b><span class="tag build">Đang xây</span><span class="d">Ảnh "Còn slot" và "Sắp đủ", có QR dẫn về trang buổi.</span></li>
+          <li><b>Chuyển người sang ca sau</b><span class="tag build">Đang xây</span><span class="d">Khi ca này đủ mà ca sau còn slot.</span></li>
+          <li><b>Duyệt nhiều yêu cầu một lần</b><span class="tag next">Bản sau</span><span class="d">Đi cùng tính năng Xin slot của người chơi.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note"><b>Số đo:</b> tỉ lệ buổi đủ người theo khu; người chơi quay lại; số phút host bỏ ra cho mỗi buổi; chi phí thực trên mỗi người đến. Những con số đầu tiên đến từ các buổi tôi tự host.</p>
+  </section>
+
+  <section id="founder">
+    <div class="sec-head">
+      <h2>Người xây Pickup Today</h2>
+      <p>Pickup Today đến từ sân bóng, không phải từ một bản thuyết trình.</p>
+    </div>
+    <div class="founder">
+      <div class="who">
+        <img src="../assets/founder.jpg" alt="Nguyễn Hồ Tấn Lộc">
+        <div><b>Nguyễn Hồ Tấn Lộc</b><span>Người sáng lập Battay AI · TP.HCM</span></div>
+      </div>
+      <div class="story">
+        <p>Tôi chơi bóng rổ từ đầu tiểu học, với quả bóng size 5. Đầu cấp ba tôi bị đứt dây chằng đầu gối, phẫu thuật rồi trở lại sân. Tôi đổi lối chơi: <b>quan sát, điều tiết nhịp, ném xa hơn</b>, và vẫn giữ kỹ năng qua người. Đó cũng là lý do an toàn quan trọng với tôi trong mỗi buổi chơi.</p>
+        <p>Tôi từng là <b>trợ giảng rồi giảng viên bóng rổ ở Eballs</b>. Tôi học thiết kế đồ hoạ, tự học quay dựng video, và nghỉ học năm tư để tìm con đường riêng. Tôi từng <b>quay dựng, biên tập và thiết kế cho MSPORT</b>, công ty camera hành trình, và hiện <b>làm thiết kế in ấn từ xa có trả phí</b>.</p>
+      </div>
+    </div>
+    <div class="maps">
+      <div class="map"><b>Dạy bóng ở Eballs</b><span>Hiểu người chơi và tổ chức hoạt động trên sân.</span></div>
+      <div class="map"><b>Video ở MSPORT</b><span>Quay và dựng, nền cho video xem lại trận đấu.</span></div>
+      <div class="map"><b>Thiết kế in ấn</b><span>Kiểm từng chi tiết trước khi bàn giao.</span></div>
+      <div class="map"><b>Vận hành agent</b><span>Chia việc, kiểm tra, biến thành quy trình.</span></div>
+    </div>
+  </section>
+
+  <section id="claude">
+    <div class="sec-head">
+      <h2>Xây cùng Claude, mỗi ngày</h2>
+      <div>
+        <p>Tôi tự trả <b>gói Claude Pro</b> và dùng Claude, Claude Code suốt ngày làm việc. AI đổi cách tôi tự học và làm việc: tôi viết rõ việc cần làm, Claude làm, một bước review độc lập kiểm tra, và <b>tôi duyệt trước khi bất cứ thứ gì được giao đi.</b></p>
+        <p>Các agent tôi dựng bằng Claude Code giờ xử lý phần lớn việc in ấn có trả phí, tôi giữ bước duyệt cuối. Thời gian đó tôi dành cho Pickup Today.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">57<small>/58</small></div><p>lỗi cài cố ý bị bước kiểm bàn giao của agent tem in bắt được hoặc gắn cờ (thử phá hoại, 08/2026)</p></div>
+      <div class="stat"><div class="n">102</div><p>sự cố thật mà agent file in đã biến thành luật dùng lại</p></div>
+      <div class="stat"><div class="n">G1 · G2</div><p>phạm vi và kế hoạch build của Pickup Today được duyệt qua cổng trước khi viết mã; đóng băng phạm vi tới buổi thật đầu tiên</p></div>
+      <div class="stat"><div class="n">28<small> bản / 5 ngày</small></div><p>website cho một khách trả tiền, làm cùng Claude</p></div>
+    </div>
+    <div class="duo">
+      <div class="log" aria-label="Trích sổ luật">
+        <header><span>rules.log · agent file in</span><span>4 / 102</span></header>
+        <ol>
+          <li><span>#001</span><span>colorDownsampling = 0 xuất ra trang PDF trống, dù tài liệu nói khác. Dùng NODOWNSAMPLE.</span></li>
+          <li><span>#002</span><span>Lề xén PDF bị làm tròn xuống số point nguyên: 3 mm thành 8 pt. Ghi 9 pt.</span></li>
+          <li><span>#011</span><span>Illustrator cần đường dẫn tuyệt đối; đường dẫn tương đối làm saveAs huỷ.</span></li>
+          <li><span>#055</span><span>Nền tối dựng ở sRGB bị đục khi sang CMYK. Đổi từng màu mốc, rồi pha theo % mực.</span></li>
+        </ol>
+        <footer>Mỗi luật ghi ngày của job sinh ra nó và được dùng lại ở các job sau.</footer>
+      </div>
+      <ol class="flow" aria-label="Mỗi việc chạy thế nào">
+        <li><b>Yêu cầu</b><span>việc cần làm, viết rõ ra</span></li>
+        <li><b>Claude làm</b><span>mã, file, trang</span></li>
+        <li><b>Kiểm độc lập</b><span>kiểm thử tự động và người review riêng</span></li>
+        <li class="human"><b>Tôi duyệt</b><span>trước khi giao đi</span></li>
+        <li><b>Bàn giao</b><span>cho khách, người chơi, host</span></li>
+        <li><b>Rút kinh nghiệm</b><span>mỗi lỗi thành một luật</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="sec-head">
+      <h2>Pickup Today đi tiếp thế nào</h2>
+      <div>
+        <p>Mục tiêu: bóng rổ phong trào dễ tham gia hơn, tổ chức đỡ tốn hơn, người chơi được chăm lo tốt hơn. Mỗi nhánh dưới đây được thử ở buổi thật trước khi thành dịch vụ.</p>
+        <div class="legend">
+          <span class="tag trial">Đang chạy thử</span><span class="tag build">Đang xây</span><span class="tag next">Đề xuất</span><span class="tag explore">Đang tìm hiểu</span><span class="tag vision">Để sau · Tầm nhìn</span>
+        </div>
+      </div>
+    </div>
+    <div class="road">
+      <div class="card"><h3>Tìm và tham gia pickup</h3><p>Buổi của nhiều host trong một danh sách, bắt đầu ở TP.HCM.</p><span class="tag build">Đang xây</span></div>
+      <div class="card"><h3>Công cụ cho host</h3><p>Danh sách, slot, ảnh trạng thái và cập nhật trong vài chạm, cả với người lần đầu làm host.</p><span class="tag build">Đang xây</span></div>
+      <div class="card"><h3>Pickup Today Radar</h3><p>Tin bóng rổ được gom ba lần mỗi ngày và soạn cùng Claude; tôi duyệt từng bài trước khi đăng.</p><span class="tag trial">Đang chạy thử</span></div>
+      <div class="card"><h3>Video xem lại trận</h3><p>Video cả buổi để người chơi xem lại trên điện thoại, quay bằng camera 360 tôi tự bỏ tiền mua.</p><span class="tag next">Đề xuất</span></div>
+      <div class="card"><h3>Agent xử lý video</h3><p>Cắt clip theo mục đích, rồi thử theo dấu người chơi trên đoạn ngắn, có người kiểm từng kết quả.</p><span class="tag explore">Đang tìm hiểu</span></div>
+      <div class="card"><h3>Chỉ số người chơi</h3><p>Những con số quan sát được như ném trúng, số lần ném, kiến tạo; định nghĩa cùng người chơi trước khi xây.</p><span class="tag explore">Đang tìm hiểu</span></div>
+      <div class="card"><h3>An toàn và bảo hiểm chấn thương</h3><p>An toàn thiết thực trên mọi trang buổi ngay từ bản đầu; đang tìm hiểu phương án bảo hiểm. Hiện chưa cung cấp bảo hiểm.</p><span class="tag explore">Đang tìm hiểu</span></div>
+      <div class="card"><h3>AI trong sản phẩm</h3><p>Thêm theo từng việc, chỉ khi giúp host hoặc người chơi đỡ công thật sự.</p><span class="tag vision">Để sau</span></div>
+      <div class="card"><h3>Ra ngoài TP.HCM</h3><p>Pickup cho người chơi và khách du lịch khắp Việt Nam.</p><span class="tag vision">Tầm nhìn</span></div>
+    </div>
+    <div class="invest">
+      <span class="n">Tự đầu tư</span>
+      <p>Battay AI do người sáng lập dẫn dắt và tự bỏ vốn. <b>Tôi tự trả các công cụ AI</b>, và sẽ tự bỏ tiền mua camera cho video xem lại trận.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <div class="label" style="margin-bottom:14px">Liên hệ</div>
+        <a class="mail" href="mailto:hello@battayai.com">hello@battayai.com</a>
+      </div>
+      <p>Host, sân, người chơi và đối tác ở TP.HCM: cứ viết thẳng cho tôi.</p>
+    </div>
+  </section>
+
+  <footer class="site"><span>© 2026 Battay AI · TP.HCM, Việt Nam</span><span>Làm cùng Claude</span></footer>
+
+</div>
+</body>
+</html>
