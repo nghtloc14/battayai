@@ -333,3 +333,5 @@ footer.site { padding: 24px 0 40px; border-top: 1px solid var(--line); display: 
   .oneplan div { border-right: 0; border-bottom: 1px solid rgba(245,139,40,.25); }
   .oneplan div:last-child { border-bottom: 0; }
 }
+.media figure img.nat { aspect-ratio: auto; }
+.media figure img.top { object-position: 50% 0; }
