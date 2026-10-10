@@ -129,57 +129,49 @@
   <section id="agents">
     <div class="head">
       <div class="label kicker">Battay AI · Agents</div>
-      <h2>One $20 Claude plan carries my whole print-design job.</h2>
-      <p class="intro">Two agents I built with Claude Code handle nearly all of my remote print-design work, the job that pays my living: from ideas and reading the brief to building the files and checking their own output. <b>I keep the final approval.</b> On the same plan, I build Pickup Today.</p>
+      <h2>Agents for real print-design work.</h2>
+      <p class="intro">I built two agents with Claude Code for my paid print-design work. They handle the repetitive steps and check their own output; <b>I keep the design decisions and the final approval</b>. Pickup Today is being built the same way.</p>
     </div>
     <div class="agents">
       <div class="agent">
         <h3>Trúc · batch labels</h3>
-        <p class="role">Serial-numbered labels, barcodes and cut-line layouts for large orders.</p>
+        <p class="role">Serial-numbered labels, barcodes, cut layouts.</p>
         <div class="macwin">
           <div class="mw-bar"><i></i><i></i><i></i><span>Truc agent — Claude Code</span></div>
-          <div class="mw-body">
-            <div class="mw-tree"><b>Truc agent/</b><br>CLAUDE.md<br>AGENTS.md<br><span class="on">skills/ · 12</span><br>scripts/ · 75<br>hooks/ · 2<br>viec/</div>
-            <div class="mw-log" lang="vi">
-              <p class="me">Làm tem đánh số cho đơn tuần này</p>
-              <p>Đọc file Excel hướng dẫn in: 3 mã hàng, 1.240 tem</p>
-              <p>Dựng PDF mỗi tem một trang, đánh số liền 0001–1240</p>
-              <p>Vector hoá mã vạch, dàn đường cắt</p>
-              <p class="ok">Kiểm bàn giao: số trang, cỡ trang, dãy số, mã vạch</p>
-              <p class="ok">Agent duyệt mù: đạt</p>
-              <p class="wait">Chờ Lộc duyệt rồi mới gửi</p>
-            </div>
+          <div class="mw-log">
+            <p class="me">Request: numbered labels for one order</p>
+            <p>Read the print instructions</p>
+            <p>Build the file at the exact label size, numbered in sequence</p>
+            <p class="ok">Self-check: page count, number sequence, barcodes</p>
+            <p class="ok">A second agent reviews it blind</p>
+            <p class="wait">Waits for my approval before anything is sent</p>
           </div>
-          <div class="mw-foot">Rebuilt from the real workflow · sample numbers, no client data · the agents work in Vietnamese</div>
+          <div class="mw-foot">Illustration of the general steps · not real data</div>
         </div>
-        <div class="nums"><span><b>57</b>/58 injected defects caught or flagged</span><span><b>12</b> skills</span><span><b>2</b> hooks: originals locked, no stopping before review</span></div>
+        <div class="nums"><span><b>57</b>/58 deliberately injected defects caught or flagged in a fault-injection test</span></div>
       </div>
       <div class="agent">
         <h3>Hà · print-file builder</h3>
-        <p class="role">Rebuilds labels from photos, sketches or old files, and checks every file before print.</p>
+        <p class="role">Rebuilds labels from photos, sketches or old files.</p>
         <div class="macwin">
           <div class="mw-bar"><i></i><i></i><i></i><span>Ha agent — Claude Code</span></div>
-          <div class="mw-body">
-            <div class="mw-tree"><b>Ha agent/</b><br>CLAUDE.md<br>AGENTS.md<br><span class="on">skills/ · 7</span><br>mau-tem/ · 11<br>viec/</div>
-            <div class="mw-log" lang="vi">
-              <p class="me">Dựng lại tem 5×3 cm từ ảnh khách gửi</p>
-              <p>Đo màu từ ảnh, đổi sang CMYK (luật #055)</p>
-              <p>Dựng file Illustrator, lề xén 9 pt (luật #002)</p>
-              <p>Dùng lại công thức tem gần nhất</p>
-              <p class="ok">Kiểm file in: lề xén, hệ màu, chữ đã outline</p>
-              <p>Lỗi mới gặp được ghi thành luật cho lần sau</p>
-              <p class="wait">Chờ Lộc duyệt rồi mới gửi khách</p>
-            </div>
+          <div class="mw-log">
+            <p class="me">Request: rebuild a label from a photo</p>
+            <p>Measure colours, convert to print colour</p>
+            <p>Build the file following recorded rules</p>
+            <p class="ok">Self-check: bleed, colour mode, text</p>
+            <p>Any new mistake becomes a rule</p>
+            <p class="wait">Waits for my approval before anything is sent</p>
           </div>
-          <div class="mw-foot">Rebuilt from the real workflow · sample numbers, no client data · the agents work in Vietnamese</div>
+          <div class="mw-foot">Illustration of the general steps · not real data</div>
         </div>
-        <div class="nums"><span><b>102</b> rules from real incidents</span><span><b>11</b> reusable label recipes</span><span><b>7</b> skills</span></div>
+        <div class="nums"><span><b>102</b> rules from real incidents, reused on later jobs</span></div>
       </div>
     </div>
     <div class="oneplan">
       <div><b>One Claude Pro plan</b><span>self-paid every month since Jun 2026</span></div>
-      <div><b>My whole remote print job</b><span>the work that pays my living</span></div>
-      <div><b>Building Pickup Today</b><span>with the time I win back</span></div>
+      <div><b>Paid print work</b><span>agents do the work, I approve</span></div>
+      <div><b>Building Pickup Today</b><span>the same way</span></div>
     </div>
   </section>
 
@@ -281,7 +273,7 @@
       <h2>My own money and time go into Pickup Today.</h2>
     </div>
     <div class="invest">
-      <div class="card"><h3>Tools</h3><p>I pay for <b>Claude Pro</b> and ChatGPT myself. One Claude plan carries both my paid print work and building Pickup Today.</p></div>
+      <div class="card"><h3>Tools</h3><p>I pay for <b>Claude Pro</b> and ChatGPT myself. I use the same Claude plan for paid print work and for building Pickup Today.</p></div>
       <div class="card"><h3>Equipment</h3><p>I will buy a <b>360 camera</b> with my own money to film sessions and test match replay and agent-assisted video.</p></div>
     </div>
   </section>

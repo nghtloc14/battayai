@@ -129,57 +129,49 @@
   <section id="agents">
     <div class="head">
       <div class="label kicker">Battay AI · Agent</div>
-      <h2>Một gói Claude 20 USD gánh trọn việc in ấn của tôi.</h2>
-      <p class="intro">Hai agent tôi dựng bằng Claude Code xử lý gần như trọn công việc thiết kế in ấn remote, công việc đang nuôi sống tôi: từ ý tưởng, đọc yêu cầu, dựng file đến tự kiểm lỗi. <b>Tôi giữ bước duyệt cuối.</b> Cũng trên gói đó, tôi xây Pickup Today.</p>
+      <h2>Agent cho công việc thiết kế in ấn thật.</h2>
+      <p class="intro">Tôi dựng hai agent bằng Claude Code cho công việc thiết kế in ấn có trả phí. Agent làm các bước lặp lại và tự kiểm lỗi; <b>tôi giữ quyết định thiết kế và bước duyệt cuối</b>. Pickup Today đang được xây theo đúng cách làm này.</p>
     </div>
     <div class="agents">
       <div class="agent">
         <h3>Trúc · tem in hàng loạt</h3>
-        <p class="role">Tem đánh số, mã vạch, dàn đường cắt cho các đơn số lượng lớn.</p>
+        <p class="role">Tem đánh số, mã vạch, dàn trang cắt.</p>
         <div class="macwin">
           <div class="mw-bar"><i></i><i></i><i></i><span>Truc agent — Claude Code</span></div>
-          <div class="mw-body">
-            <div class="mw-tree"><b>Truc agent/</b><br>CLAUDE.md<br>AGENTS.md<br><span class="on">skills/ · 12</span><br>scripts/ · 75<br>hooks/ · 2<br>viec/</div>
-            <div class="mw-log">
-              <p class="me">Làm tem đánh số cho đơn tuần này</p>
-              <p>Đọc file Excel hướng dẫn in: 3 mã hàng, 1.240 tem</p>
-              <p>Dựng PDF mỗi tem một trang, đánh số liền 0001–1240</p>
-              <p>Vector hoá mã vạch, dàn đường cắt</p>
-              <p class="ok">Kiểm bàn giao: số trang, cỡ trang, dãy số, mã vạch</p>
-              <p class="ok">Agent duyệt mù: đạt</p>
-              <p class="wait">Chờ Lộc duyệt rồi mới gửi</p>
-            </div>
+          <div class="mw-log">
+            <p class="me">Yêu cầu: tem đánh số cho một đơn hàng</p>
+            <p>Đọc hướng dẫn in</p>
+            <p>Dựng file đúng khổ tem, đánh số liền</p>
+            <p class="ok">Tự kiểm: số trang, dãy số, mã vạch</p>
+            <p class="ok">Agent thứ hai duyệt mù</p>
+            <p class="wait">Chờ duyệt rồi mới gửi</p>
           </div>
-          <div class="mw-foot">Minh hoạ dựng lại từ quy trình thật · số liệu mẫu, không có thông tin khách</div>
+          <div class="mw-foot">Minh hoạ các bước chung · không phải dữ liệu thật</div>
         </div>
-        <div class="nums"><span><b>57</b>/58 lỗi cài cố ý bị bắt hoặc gắn cờ</span><span><b>12</b> skill</span><span><b>2</b> hook: chặn sửa file gốc, chặn dừng khi chưa duyệt</span></div>
+        <div class="nums"><span><b>57</b>/58 lỗi cài cố ý bị bắt hoặc gắn cờ trong bài thử phá hoại</span></div>
       </div>
       <div class="agent">
-        <h3>Hà · dựng và sửa file in</h3>
-        <p class="role">Dựng lại tem, nhãn từ ảnh chụp, phác thảo hoặc file cũ; kiểm file trước khi in.</p>
+        <h3>Hà · dựng và kiểm file in</h3>
+        <p class="role">Dựng lại tem, nhãn từ ảnh chụp, phác thảo hoặc file cũ.</p>
         <div class="macwin">
           <div class="mw-bar"><i></i><i></i><i></i><span>Ha agent — Claude Code</span></div>
-          <div class="mw-body">
-            <div class="mw-tree"><b>Ha agent/</b><br>CLAUDE.md<br>AGENTS.md<br><span class="on">skills/ · 7</span><br>mau-tem/ · 11<br>viec/</div>
-            <div class="mw-log">
-              <p class="me">Dựng lại tem 5×3 cm từ ảnh khách gửi</p>
-              <p>Đo màu từ ảnh, đổi sang CMYK (luật #055)</p>
-              <p>Dựng file Illustrator, lề xén 9 pt (luật #002)</p>
-              <p>Dùng lại công thức tem gần nhất</p>
-              <p class="ok">Kiểm file in: lề xén, hệ màu, chữ đã outline</p>
-              <p>Lỗi mới gặp được ghi thành luật cho lần sau</p>
-              <p class="wait">Chờ Lộc duyệt rồi mới gửi khách</p>
-            </div>
+          <div class="mw-log">
+            <p class="me">Yêu cầu: dựng lại tem từ ảnh chụp</p>
+            <p>Đo màu, đổi sang hệ màu in</p>
+            <p>Dựng file theo các luật đã ghi</p>
+            <p class="ok">Tự kiểm file in: lề xén, hệ màu, chữ</p>
+            <p>Lỗi mới gặp được ghi thành luật</p>
+            <p class="wait">Chờ duyệt rồi mới gửi</p>
           </div>
-          <div class="mw-foot">Minh hoạ dựng lại từ quy trình thật · số liệu mẫu, không có thông tin khách</div>
+          <div class="mw-foot">Minh hoạ các bước chung · không phải dữ liệu thật</div>
         </div>
-        <div class="nums"><span><b>102</b> luật từ sự cố thật</span><span><b>11</b> công thức tem dùng lại</span><span><b>7</b> skill</span></div>
+        <div class="nums"><span><b>102</b> luật rút từ sự cố thật, dùng lại ở các việc sau</span></div>
       </div>
     </div>
     <div class="oneplan">
       <div><b>Một gói Claude Pro</b><span>tự trả liên tục từ 06/2026</span></div>
-      <div><b>Trọn việc in ấn remote</b><span>công việc đang nuôi sống tôi</span></div>
-      <div><b>Xây Pickup Today</b><span>bằng thời gian lấy lại được</span></div>
+      <div><b>Việc in ấn có trả phí</b><span>agent làm, tôi duyệt</span></div>
+      <div><b>Xây Pickup Today</b><span>cùng cách làm đó</span></div>
     </div>
   </section>
 
@@ -281,7 +273,7 @@
       <h2>Tôi đặt tiền và thời gian của mình vào Pickup Today.</h2>
     </div>
     <div class="invest">
-      <div class="card"><h3>Công cụ</h3><p>Tôi tự trả <b>Claude Pro</b> và ChatGPT. Một gói Claude đang gánh cả việc in ấn có trả phí lẫn việc xây Pickup Today.</p></div>
+      <div class="card"><h3>Công cụ</h3><p>Tôi tự trả <b>Claude Pro</b> và ChatGPT. Cùng một gói Claude, tôi dùng cho việc in ấn có trả phí và để xây Pickup Today.</p></div>
       <div class="card"><h3>Thiết bị</h3><p>Tôi sẽ tự bỏ tiền mua <b>camera 360</b> để quay các buổi chơi, thử video xem lại và quy trình agent xử lý video.</p></div>
     </div>
   </section>
