@@ -336,3 +336,5 @@ footer.site { padding: 24px 0 40px; border-top: 1px solid var(--line); display: 
 .media figure img.nat { aspect-ratio: auto; }
 .media figure img.top { object-position: 50% 0; }
 .media.two:has(img.nat) { align-items: start; }
+.media.solo { grid-template-columns: 220px; }
+@media (max-width: 600px) { .media.solo { grid-template-columns: 180px; } }
