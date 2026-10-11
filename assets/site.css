@@ -338,3 +338,15 @@ footer.site { padding: 24px 0 40px; border-top: 1px solid var(--line); display: 
 .media.two:has(img.nat) { align-items: start; }
 .media.solo { grid-template-columns: 220px; }
 @media (max-width: 600px) { .media.solo { grid-template-columns: 180px; } }
+
+/* Bắt Tay Review */
+.btr { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: start; }
+.btr .media { margin-top: 0; }
+.btr .media figcaption { color: var(--muted); }
+.btr .media img { background: var(--bg-3); border: 1px solid var(--line); }
+.btr .card ul { list-style: none; margin-top: 4px; }
+.btr .card li { padding: 12px 0; border-top: 1px solid var(--line); display: grid; gap: 6px; }
+.btr .card li:first-child { border-top: 0; padding-top: 0; }
+.btr .card li span.d { color: var(--muted); font-size: 14.5px; }
+.btr .card a { color: var(--orange); }
+@media (max-width: 980px) { .btr { grid-template-columns: 1fr; } }
